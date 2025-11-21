@@ -1,6 +1,6 @@
 # final-project-mern
 
-
+project link https://lukii3564.github.io/final-project-mern/
 ## Overview
 
 Coderscave is a small web project that combines a Python backend with a simple frontend. This README explains the project structure, how the files work together, and how to set up and run the project on Windows (PowerShell).
