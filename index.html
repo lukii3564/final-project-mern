@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChakulaHub - AI Recipe Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>ChakulaHub</h1>
+      <p>Discover exquisite recipes tailored to your ingredients, crafted with AI precision.</p>
+      
+      <div class="search-box">
+        <input type="text" id="ingredient" placeholder="Enter ingredients (e.g., chicken, tomato)">
+        <input type="number" id="budget" placeholder="Max budget ($)" min="1" step="0.01">
+        <select id="region">
+          <option value="global">Global</option>
+          <option value="usa">USA</option>
+          <option value="india">India</option>
+        </select>
+        <button onclick="searchRecipes()">Find Recipes</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="results" id="results"></div>
+  
+  <div class="recipe-modal" id="recipeModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div class="recipe-content" id="recipeContent"></div>
+    </div>
+  </div>
+
+  <div id="submitForm" style="display:none; padding: 20px; background: #fff; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <h2>Submit Recipe</h2>
+    <input type="text" id="submitRecipeName" placeholder="Recipe Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #e0e0e0; border-radius: 4px;">
+    <textarea id="submitIngredients" placeholder="Ingredients (e.g., 1 cup rice, 2 tomatoes)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #e0e0e0; border-radius: 4px; height: 100px;"></textarea>
+    <textarea id="submitInstructions" placeholder="Instructions (step-by-step)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #e0e0e0; border-radius: 4px; height: 100px;"></textarea>
+    <button onclick="submitRecipe()" style="padding: 10px 20px; background: #ff6b6b; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+    <button onclick="document.getElementById('submitForm').style.display='none'" style="padding: 10px 20px; background: #ccc; color: #333; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">Cancel</button>
+  </div>
+
+  <footer style="padding: 20px; text-align: center; color: #666; flex-shrink: 0;">
+    <p>&copy; 2025 ChakulaHub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
